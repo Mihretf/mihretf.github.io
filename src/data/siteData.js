@@ -1,95 +1,122 @@
 export const projects = [
   {
-    slug: 'house-price-forecasting',
-    title: 'House Price Forecasting',
+    slug: 'fashion-mnist-reconstruction',
+    title: 'Learning from Missing Pixels',
     summary:
-      'A practical forecasting project exploring how neighborhood, size, and market signals shape property valuations.',
-    tagline: 'Data + ML + decision support',
-    year: '2025',
+      'A small neural network learns to reconstruct hidden image regions from Fashion-MNIST without using class labels.',
+    tagline: 'Self-supervised learning',
+    year: '2026',
     problem:
-      'Home value estimates often feel opaque and overly broad. I wanted to build a model that could explain what drives price shifts in a way that is both transparent and useful.',
+      'Can a model learn useful visual structure by predicting image pixels that were deliberately hidden?',
     motivation:
-      'The project began from a simple question: can we turn a messy real-estate dataset into a model that helps people understand valuation drivers, not just produce a score?',
+      'I wanted to explore a learning task where the image itself provides the training signal, rather than relying on clothing-category labels.',
     approach:
-      'I cleaned and combined housing features, modeled relationships using interpretable methods, and evaluated performance against realistic market patterns while keeping the workflow understandable.',
-    technologies: ['Python', 'Pandas', 'Scikit-learn', 'Matplotlib'],
+      'I masked image patches, implemented a small neural network and its training loop from scratch, then compared reconstruction quality across mask sizes.',
+    technologies: ['Python', 'NumPy', 'Pandas', 'Matplotlib'],
     challenges: [
-      'Dealing with noisy and incomplete housing records',
-      'Balancing predictive strength with explainability',
-      'Communicating uncertainty without overclaiming certainty',
+      'Reconstructing larger hidden regions with less visual context',
+      'Pixel-level error can favor blurry average predictions',
+      'The experiments do not test the learned features on a separate classification task',
     ],
     results: [
-      'A transparent valuation workflow grounded in feature importance and model diagnostics.',
-      'A clearer view of which variables matter most in practice.',
-      'A useful prototype for further experimentation and product thinking.',
+      'Training loss decreased from 0.490365 to 0.169963 over 20 epochs.',
+      'Test reconstruction error increased as the mask grew from 8x8 to 16x16 pixels.',
+      'The model produced plausible reconstructions without training on class labels.',
     ],
     learnings:
-      'The strongest models were not always the most impressive ones. The most valuable work came from understanding the data deeply and making assumptions visible.',
+      'The model learned statistical relationships between pixels, not human-readable clothing categories. Larger missing regions made reconstruction less reliable.',
     links: {
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/Mihretf/fashion-mnist-from-scratch',
     },
   },
   {
-    slug: 'civic-signal',
-    title: 'Civic Signal',
+    slug: 'reinforcement-learning-grid-world',
+    title: 'Learning to Navigate',
     summary:
-      'A civic data interface that helps people detect patterns in public information and turn them into clearer narratives.',
-    tagline: 'Public data + sensemaking',
-    year: '2024',
+      'A Q-learning agent learns to navigate an obstacle-filled grid world through trial, reward, and repeated practice.',
+    tagline: 'Q-learning from scratch',
+    year: '2026',
     problem:
-      'Public datasets are full of information but often difficult to interpret at the speed a community decision requires.',
+      'Can an agent learn an effective route to a goal through rewards instead of being given the correct path?',
     motivation:
-      'I wanted to design a tool that could support local understanding without creating another complicated dashboard.',
+      'A small grid world makes the core reinforcement-learning ideas visible: states, actions, rewards, and policies.',
     approach:
-      'I focused on narrative structure, simple visual cues, and decision support patterns that let users explore trends without getting lost in technical detail.',
-    technologies: ['React', 'Python', 'NLP', 'Data Viz'],
+      'I built an 8x8 environment and a tabular Q-learning agent, compared it against a random baseline, and tested different exploration rates.',
+    technologies: ['Python', 'NumPy', 'Q-learning', 'Matplotlib'],
     challenges: [
-      'Turning raw data into a calm, readable interface',
-      'Keeping the workflow useful across different audiences',
-      'Reducing friction in interpretation',
+      'Balancing exploration of new actions with using learned actions',
+      'Choosing rewards that encourage efficient paths',
+      'The learned policy is evaluated on one fixed grid layout',
     ],
     results: [
-      'A clearer, more accessible presentation of public-data insights.',
-      'A stronger emphasis on interpretability and communication.',
-      'A prototype structure that could scale into a wider civic toolset.',
+      'The trained agent reached a 100% success rate in the recorded later training episodes.',
+      'A random-agent baseline reached the goal in 10% of episodes.',
+      'Exploration settings changed convergence speed and final path efficiency.',
     ],
     learnings:
-      'Good product design is often more about removing friction than adding features.',
+      'A baseline and controlled comparisons make learning measurable; results from a fixed grid should not be generalized to different maps.',
     links: {
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/Mihretf/reinforcement-learning-from-scratch',
     },
   },
   {
-    slug: 'adaptive-learning-studio',
-    title: 'Adaptive Learning Studio',
+    slug: 'document-topic-discovery',
+    title: 'Document Topic Discovery',
     summary:
-      'An experiment in personalized education flows that adapt explanations, pacing, and reflection based on learner behavior.',
-    tagline: 'Learning systems + UX',
-    year: '2024',
+      'An unsupervised learning study that uses TF-IDF and K-Means to explore topic structure in AG News.',
+    tagline: 'TF-IDF + K-Means',
+    year: '2026',
     problem:
-      'Many learning tools deliver static content that does not adapt to confusion, confidence, or learning pace.',
+      'Can clustering discover useful topics in news articles without seeing the human-assigned category labels?',
     motivation:
-      'I wanted to explore how personalized feedback could make learning more effective without feeling intrusive or unnatural.',
+      'I wanted to compare machine-discovered groupings with the dataset taxonomy and see where the model reveals finer-grained topics.',
     approach:
-      'I designed a lightweight adaptive learning loop with a focus on pacing, explanations, and reflection rather than complexity for its own sake.',
-    technologies: ['ML', 'UX Research', 'Design Systems'],
+      'I implemented text preprocessing, TF-IDF vectorization, and K-Means from scratch, then inspected clusters with representative documents, PCA plots, and label comparisons.',
+    technologies: ['Python', 'TF-IDF', 'K-Means', 'PCA'],
     challenges: [
-      'Designing thoughtful feedback instead of noise',
-      'Avoiding over-personalization that feels manipulative',
-      'Balancing usability with educational depth',
+      'Building a sparse text representation for 120,000 documents',
+      'Interpreting overlapping clusters without overclaiming separation',
+      'Distinguishing semantic coherence from geometric separation',
     ],
     results: [
-      'A more thoughtful concept for adaptive learning interfaces.',
-      'Clearer signals around learner confidence and pacing.',
-      'A stronger understanding of where structure aids learning.',
+      'Sports and business/oil topics formed coherent clusters in the experiments.',
+      'A software-focused cluster and more specific world-news subtopics emerged at higher K values.',
+      'PCA plots and near-zero silhouette scores showed substantial overlap between documents.',
     ],
     learnings:
-      'The most useful adaptation is often the simplest: clearer explanations, slower pacing, and better feedback loops.',
+      'Cluster interpretation needs more than one metric: representative documents and top terms helped explain groups that silhouette scores alone could not.',
     links: {
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/Mihretf/kmeans-clustering-from-scratch',
+    },
+  },
+  {
+    slug: 'house-price-regression',
+    title: 'House Price Prediction',
+    summary:
+      'A from-scratch linear regression study of how seven housing features work together to predict prices.',
+    tagline: 'Linear regression + gradient descent',
+    year: '2026',
+    problem:
+      'Can a small linear model learn useful house-price estimates from measurable property features?',
+    motivation:
+      'I wanted to understand the full learning process directly, from inspecting the data to evaluating predictions and regularization.',
+    approach:
+      'I implemented prediction, mean squared error, gradients, gradient descent, test evaluation, and L2 regularization without a prebuilt regression estimator.',
+    technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
+    challenges: [
+      'Features use different scales, so weights are not directly comparable',
+      'Choosing a learning rate that converges on the dataset',
+      'Testing regularization without confusing smaller weights with better predictions',
+    ],
+    results: [
+      'Using all seven features reduced test RMSE from about 40,425 to about 33,147 compared with the single-feature model.',
+      'A very strong L2 penalty increased test error in the recorded comparison.',
+      'The dataset contained 1,000 records and had no missing or duplicate rows.',
+    ],
+    learnings:
+      'Features that look weak individually can still help in combination; stronger regularization is not automatically better.',
+    links: {
+      github: 'https://github.com/Mihretf/house-price-regression-from-scratch',
     },
   },
 ]

@@ -77,8 +77,9 @@ export default function ProjectDetailPage() {
       </div>
 
       <div className="detail-links">
-        <a href={project.links.github}>GitHub</a>
-        <a href={project.links.demo}>Live demo</a>
+        <a href={project.links.github} target="_blank" rel="noreferrer">
+          Read README and view project files
+        </a>
       </div>
     </article>
   )

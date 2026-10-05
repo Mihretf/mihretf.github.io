@@ -20,8 +20,9 @@ export default function ProjectCard({ project }) {
       </div>
 
       <div className="card-links">
-        <a href={project.links.github}>GitHub</a>
-        <a href={project.links.demo}>Live demo</a>
+        <a href={project.links.github} target="_blank" rel="noreferrer">
+          Read README
+        </a>
       </div>
     </article>
   )
