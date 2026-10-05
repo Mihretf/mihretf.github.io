@@ -77,8 +77,9 @@ export default function ProjectDetailPage() {
       </div>
 
       <div className="detail-links">
+        <Link to={`/projects/${project.slug}/readme`}>Read README</Link>
         <a href={project.links.github} target="_blank" rel="noreferrer">
-          Read README and view project files
+          View repository
         </a>
       </div>
     </article>

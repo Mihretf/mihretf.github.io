@@ -20,8 +20,11 @@ export default function ProjectCard({ project }) {
       </div>
 
       <div className="card-links">
-        <a href={project.links.github} target="_blank" rel="noreferrer">
+        <Link to={`/projects/${project.slug}/readme`}>
           Read README
+        </Link>
+        <a href={project.links.github} target="_blank" rel="noreferrer">
+          GitHub
         </a>
       </div>
     </article>

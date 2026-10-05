@@ -1062,6 +1062,117 @@ h1 {
   gap: 1.5rem;
 }
 
+.project-readme-page {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.project-readme-header {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.project-readme-content {
+  max-width: 900px;
+  padding: 1.5rem;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background:
+    linear-gradient(135deg, rgba(245, 166, 35, 0.035), rgba(97, 175, 239, 0.045)),
+    var(--card);
+  box-shadow: var(--shadow);
+}
+
+.project-readme-content > :first-child {
+  margin-top: 0;
+}
+
+.project-readme-content h1,
+.project-readme-content h2,
+.project-readme-content h3,
+.project-readme-content h4 {
+  margin: 1.6rem 0 0.7rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.project-readme-content h1 {
+  font-size: 1.8rem;
+}
+
+.project-readme-content h2 {
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.35rem;
+}
+
+.project-readme-content p,
+.project-readme-content li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.project-readme-content a {
+  color: var(--accent-secondary);
+  overflow-wrap: anywhere;
+}
+
+.project-readme-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+.project-readme-content pre {
+  max-width: 100%;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--text);
+}
+
+.project-readme-content code {
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.88em;
+}
+
+.project-readme-content :not(pre) > code {
+  padding: 0.12rem 0.3rem;
+  border-radius: 0.25rem;
+  background: var(--accent-soft);
+}
+
+.project-readme-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.project-readme-content th,
+.project-readme-content td {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.project-readme-content th {
+  color: var(--text);
+  background: var(--accent-soft-cool);
+}
+
+.project-readme-content blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+}
+
 .back-link {
   width: fit-content;
   padding: 0.65rem 0.95rem;

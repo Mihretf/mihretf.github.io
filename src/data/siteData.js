@@ -27,6 +27,7 @@ export const projects = [
       'The model learned statistical relationships between pixels, not human-readable clothing categories. Larger missing regions made reconstruction less reliable.',
     links: {
       github: 'https://github.com/Mihretf/fashion-mnist-from-scratch',
+      readme: 'https://raw.githubusercontent.com/Mihretf/fashion-mnist-from-scratch/main/readme.md',
     },
   },
   {
@@ -57,6 +58,7 @@ export const projects = [
       'A baseline and controlled comparisons make learning measurable; results from a fixed grid should not be generalized to different maps.',
     links: {
       github: 'https://github.com/Mihretf/reinforcement-learning-from-scratch',
+      readme: 'https://raw.githubusercontent.com/Mihretf/reinforcement-learning-from-scratch/main/README.md',
     },
   },
   {
@@ -87,6 +89,7 @@ export const projects = [
       'Cluster interpretation needs more than one metric: representative documents and top terms helped explain groups that silhouette scores alone could not.',
     links: {
       github: 'https://github.com/Mihretf/kmeans-clustering-from-scratch',
+      readme: 'https://raw.githubusercontent.com/Mihretf/kmeans-clustering-from-scratch/main/Readme.md',
     },
   },
   {
@@ -117,6 +120,7 @@ export const projects = [
       'Features that look weak individually can still help in combination; stronger regularization is not automatically better.',
     links: {
       github: 'https://github.com/Mihretf/house-price-regression-from-scratch',
+      readme: 'https://raw.githubusercontent.com/Mihretf/house-price-regression-from-scratch/main/README.md',
     },
   },
 ]

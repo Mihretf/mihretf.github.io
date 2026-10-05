@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
+import ProjectReadmePage from './pages/ProjectReadmePage'
 import ResearchPage from './pages/ResearchPage'
 import ResearchDetailPage from './pages/ResearchDetailPage'
 import WritingPage from './pages/WritingPage'
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:projectName/readme" element={<ProjectReadmePage />} />
           <Route path="/projects/:projectName" element={<ProjectDetailPage />} />
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/research/:researchProjectName" element={<ResearchDetailPage />} />
